@@ -1,17 +1,6 @@
 version: 1
 applications:
-  - frontend:
-      phases:
-        preBuild:
-          commands:
-            - echo "Installing dependencies..."
-            - pip install -r requirements.txt
-        build:
-          commands:
-            - echo "Build phase is not needed for Streamlit, skipping..."
-      artifacts:
-        baseDirectory: /
-        files:
-          - '**/*'
-    appRoot: .
+  - appRoot: .
     platform: WEBSERVER
+    framework: DOCKER
+    buildImage: amazonlinux:2023
